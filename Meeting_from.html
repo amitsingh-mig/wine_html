@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Schedule Your Meeting | Indo-European Wine Meet 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="site-navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="mig-logo">
+        <img src="https://mediaindia.eu/wp-content/themes/mig_theme/images/mig-logo.png" alt="Media India Group">
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <a href="user-login.html" class="text-decoration-none" style="color:var(--ink); font-weight:700; font-size:0.9rem;"><i class="bi bi-person-fill me-1"></i>Portal</a>
+        <a href="index.html" class="btn-outline-wine">&larr; Back to Homepage</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="meeting-hero" style="padding: 90px 0 70px;">
+    <div class="container-xl-custom">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-start">
+          <p class="eyebrow" style="color:var(--wine); font-weight:700; letter-spacing:0.12em; font-size:0.8rem;">INDO-EUROPEAN WINE MEET 2026 &nbsp;&rarr;</p>
+          <h1 style="font-family:var(--font-serif); font-weight:800; color:var(--wine); font-size:clamp(2.5rem, 5vw, 3.8rem); margin: 15px 0 20px; line-height: 1.15;">Pre-Schedule<br>Your Meeting</h1>
+          <p class="lede" style="color:#5a4a42; font-size:1.1rem; line-height:1.7; margin-bottom:35px; font-weight:500;">
+            Request a one-to-one meeting with producers, buyers and key decision-makers at Indo-European Wine Meet 2026.
+          </p>
+          
+          <div class="d-flex flex-wrap gap-3">
+            <div class="meeting-badge-item">
+              <i class="bi bi-calendar2-week"></i>
+              <div>
+                <strong>16 October 2026</strong>
+                <span>Paris, France</span>
+              </div>
+            </div>
+            <div class="meeting-badge-item">
+              <i class="bi bi-clock"></i>
+              <div>
+                <strong>15 - 30 Min</strong>
+                <span>One-to-one Meeting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center mt-5 mt-lg-0">
+          <img src="wine_eiffel_watercolor.png" alt="Wine Eiffel Tower Watercolor" style="max-width:90%; height:auto; border-radius:var(--radius-lg); filter: drop-shadow(0 15px 35px rgba(139,30,63,0.12));">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider-strip"></div>
+
+  <!-- ============ BOOKING WORKFLOW ============ -->
+  <section class="booking-section" style="padding: 70px 0 80px;">
+    <div class="container-xl-custom">
+      
+      <!-- Progress Stepper -->
+      <div class="stepper">
+        <div class="step-node active" id="step-node-1">
+          1
+          <span class="step-label">Your Details</span>
+        </div>
+        <div class="step-node" id="step-node-2">
+          2
+          <span class="step-label">Choose a Slot</span>
+        </div>
+        <div class="step-node" id="step-node-3">
+          3
+          <span class="step-label">Submit Request</span>
+        </div>
+      </div>
+
+      <div class="booking-card mt-5">
+
+        <!-- ============ STEP 1: USER DETAILS FORM ============ -->
+        <div id="step-form-block">
+          <div class="group-heading" style="margin-bottom: 24px;">
+            <h3 style="font-family:var(--font-serif); color:var(--wine); font-weight:800; font-size:1.6rem;">Your Details</h3>
+            <p style="font-size:0.88rem; color:#8a7f76; margin: 4px 0 0 0;">Please fill in your details to continue.</p>
+          </div>
+          
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-person-fill booking-input-icon"></i>
+                <input type="text" class="booking-control" id="f-name" placeholder="Full Name *">
+                <div class="booking-err" id="err-name">Full name is required.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-building booking-input-icon"></i>
+                <input type="text" class="booking-control" id="f-company" placeholder="Company Name *">
+                <div class="booking-err" id="err-company">Company name is required.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-briefcase-fill booking-input-icon"></i>
+                <input type="text" class="booking-control" id="f-role" placeholder="Designation *">
+                <div class="booking-err" id="err-role">Designation is required.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-globe booking-input-icon"></i>
+                <select class="booking-control form-select" id="f-country" style="padding-left:48px;">
+                  <option value="" disabled selected>Select your country *</option>
+                  <option value="India">India</option>
+                  <option value="France">France</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Spain">Spain</option>
+                  <option value="Germany">Germany</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United States">United States</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="booking-err" id="err-country">Please select a country.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-envelope-fill booking-input-icon"></i>
+                <input type="email" class="booking-control" id="f-email" placeholder="Email *">
+                <div class="booking-err" id="err-email">A valid email address is required.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="booking-input-wrap">
+                <i class="bi bi-telephone-fill booking-input-icon"></i>
+                <input type="tel" class="booking-control" id="f-phone" placeholder="Mobile / Phone *">
+                <div class="booking-err" id="err-phone">A valid phone number is required.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="booking-input-wrap">
+                <i class="bi bi-chat-left-text-fill booking-input-icon" style="top: 24px;"></i>
+                <textarea class="booking-control" id="f-purpose" placeholder="Meeting Purpose / Business Interest *" style="height: 110px; padding-top: 14px; resize: none;"></textarea>
+                <div class="booking-err" id="err-purpose">Please outline your meeting purpose.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="booking-input-wrap">
+                <i class="bi bi-pencil-square booking-input-icon" style="top: 24px;"></i>
+                <textarea class="booking-control" id="f-notes" placeholder="Additional Notes (Optional)" style="height: 90px; padding-top: 14px; resize: none;"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" id="f-type" value="European Wine Producer">
+
+          <div class="text-end mt-4">
+            <button class="btn-submit" onclick="submitForm()" style="padding: 14px 44px;">
+              Next: Choose a Slot &nbsp;&rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ STEP 2: SLOT SELECTION ============ -->
+        <div id="step-slots-block" style="display:none;">
+          <div class="group-heading" style="margin-bottom: 24px;">
+            <h3 style="font-family:var(--font-serif); color:var(--wine); font-weight:800; font-size:1.6rem;">Select a Time Slot</h3>
+            <p style="font-size:0.88rem; color:#8a7f76; margin: 4px 0 0 0;">Only available time slots can be selected for October 16, 2026.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="meeting-date-display">
+              <i class="bi bi-calendar-check-fill"></i>
+              <div class="text-start">
+                <div class="day">Friday, October 16, 2026</div>
+                <div style="font-size:0.75rem; opacity:0.85; font-weight: 500;">SIAL Paris Matchmaking Grid</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-block mb-4">
+            <div class="group-heading" style="margin-bottom:12px;">
+              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-sunrise-fill me-2" style="color:var(--amber);"></i>Morning Session</h5>
+            </div>
+            <div class="slots-wrapper" id="morning-grid"></div>
+          </div>
+
+          <div class="form-group-block">
+            <div class="group-heading" style="margin-bottom:12px;">
+              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-sunset-fill me-2" style="color:var(--rose);"></i>Afternoon Session</h5>
+            </div>
+            <div class="slots-wrapper" id="afternoon-grid"></div>
+          </div>
+
+          <!-- Legend Bar -->
+          <div class="d-flex gap-4 mt-5 justify-content-center" style="font-size:0.82rem; color:#8a7f76; font-weight:600;">
+            <span><span style="display:inline-block; width:12px; height:12px; border-radius:3px; background:#fff; border:1.5px solid var(--border-soft); margin-right:5px; vertical-align:middle;"></span>Available</span>
+            <span><span style="display:inline-block; width:12px; height:12px; border-radius:3px; background:var(--wine); margin-right:5px; vertical-align:middle;"></span>Selected</span>
+            <span><span style="display:inline-block; width:12px; height:12px; border-radius:3px; background:var(--cream-alt); border:1.5px solid var(--border-soft); opacity:0.55; margin-right:5px; vertical-align:middle;"></span>Booked / Reserved</span>
+          </div>
+
+          <div class="d-flex gap-3 mt-5 flex-wrap">
+            <button class="btn-reset" onclick="backToForm()">&larr; Back</button>
+            <button class="btn-submit flex-grow-1" id="btn-confirm-slot" disabled onclick="openConfirmModal()">
+              Review & Pre-Schedule &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ STEP 3: SUCCESS STATE ============ -->
+        <div id="step-success-block" style="display:none;">
+          <div class="booking-success-wrap">
+            <div class="booking-success-icon"><i class="bi bi-check-lg"></i></div>
+            <h2 class="booking-success-title">Meeting Requested!</h2>
+            <div class="ref-tag" id="success-ref"><i class="bi bi-hash"></i><span id="ref-text"></span></div>
+            
+            <p style="font-size:1.02rem; color:#4a4038; line-height:1.7; max-width:560px; margin:0 auto 20px;">
+              Your B2B matchmaking request has been received. Our team will review the request and send a confirmation email to <strong id="success-email"></strong>.
+            </p>
+            
+            <div style="background:rgba(139,30,63,0.06); border:1px solid rgba(139,30,63,0.12); padding:16px; border-radius:12px; max-width:480px; margin:0 auto 24px; font-size:0.88rem; color:#4a4038; line-height:1.6;">
+              <i class="bi bi-shield-check-fill text-wine me-1"></i> <strong>Track status:</strong> Log into the <a href="user-login.html" style="color:var(--wine); font-weight:700;">Participant Portal</a> to view progress.<br>
+              <span style="font-size:0.78rem; color:#8a7f76;">Default password for your email is: <code>password123</code></span>
+            </div>
+            
+            <div class="confirm-box text-start mb-4" style="max-width: 480px; margin: 0 auto;">
+              <div class="confirm-item"><span class="confirm-label">Name</span><span class="confirm-value" id="s-name"></span></div>
+              <div class="confirm-item"><span class="confirm-label">Company</span><span class="confirm-value" id="s-company"></span></div>
+              <div class="confirm-item"><span class="confirm-label">Meeting Date</span><span class="confirm-value">October 16, 2026</span></div>
+              <div class="confirm-item"><span class="confirm-label">Selected Slot</span><span class="confirm-value highlight" id="s-time"></span></div>
+            </div>
+            
+            <button class="btn-submit" onclick="restartBooking()"><i class="bi bi-arrow-counterclockwise me-1"></i>Pre-Schedule Another Session</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY PRE-SCHEDULE SECTION ============ -->
+  <section style="background:#fff; padding: 75px 0 80px; border-top: 1.5px solid var(--border-soft);">
+    <div class="container-xl-custom text-center">
+      <h2 style="font-family:var(--font-serif); color:var(--wine); font-weight:800; font-size:2.2rem; margin-bottom:48px;">Why Pre-Schedule?</h2>
+      
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div style="padding: 10px;">
+            <div style="width:56px; height:56px; border-radius:50%; background:rgba(139,30,63,0.08); color:var(--wine); display:inline-flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:20px;">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h5 style="font-weight:700; color:var(--ink); margin-bottom:10px;">Save Time</h5>
+            <p style="font-size:0.88rem; color:#8a7f76; line-height:1.6; margin:0;">Meet relevant partners in advance and make the most of SIAL Paris 2026.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div style="padding: 10px;">
+            <div style="width:56px; height:56px; border-radius:50%; background:rgba(139,30,63,0.08); color:var(--wine); display:inline-flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:20px;">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h5 style="font-weight:700; color:var(--ink); margin-bottom:10px;">Quality Meetings</h5>
+            <p style="font-size:0.88rem; color:#8a7f76; line-height:1.6; margin:0;">One-to-one curated business meetings focused on your trade objectives.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div style="padding: 10px;">
+            <div style="width:56px; height:56px; border-radius:50%; background:rgba(139,30,63,0.08); color:var(--wine); display:inline-flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:20px;">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h5 style="font-weight:700; color:var(--ink); margin-bottom:10px;">Grow Business</h5>
+            <p style="font-size:0.88rem; color:#8a7f76; line-height:1.6; margin:0;">Explore opportunities, coordinate distribution channels, and find buyers.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div style="padding: 10px;">
+            <div style="width:56px; height:56px; border-radius:50%; background:rgba(139,30,63,0.08); color:var(--wine); display:inline-flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:20px;">
+              <i class="bi bi-globe-americas"></i>
+            </div>
+            <h5 style="font-weight:700; color:var(--ink); margin-bottom:10px;">Global Network</h5>
+            <p style="font-size:0.88rem; color:#8a7f76; line-height:1.6; margin:0;">Connect with European and Indian stakeholders in a dedicated space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER BAND INFO ============ -->
+  <div style="background:var(--wine-deep); color:#fff; padding: 22px 0; text-align:center; font-size:0.9rem; font-weight:500;">
+    <div class="container-xl-custom">
+      <i class="bi bi-info-circle me-2" style="color:var(--amber);"></i> Our team will review your request and confirm your meeting. You will be notified via email and dashboard.
+    </div>
+  </div>
+
+  <!-- ============ CONFIRM MODAL ============ -->
+  <div class="modal fade" id="confirmModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius:22px; border:2px solid var(--border-soft); box-shadow: 0 24px 60px rgba(139,30,63,0.22);">
+        <div class="modal-header" style="border-bottom:1.5px solid var(--border-soft); padding: 24px 28px 20px;">
+          <h5 class="modal-title" style="font-weight:800; font-family:var(--font-display); color:var(--ink);"><i class="bi bi-calendar-check-fill text-wine me-2"></i>Review Booking Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" style="padding: 24px 28px;">
+          <p style="font-size:0.92rem; color:#8a7f76; margin-bottom:18px;">Please review the selected details below before submitting your meeting request.</p>
+          
+          <div class="confirm-box">
+            <div class="confirm-item"><span class="confirm-label">Name</span><span class="confirm-value" id="m-name"></span></div>
+            <div class="confirm-item"><span class="confirm-label">Company</span><span class="confirm-value" id="m-company"></span></div>
+            <div class="confirm-item"><span class="confirm-label">Designation</span><span class="confirm-value" id="m-role"></span></div>
+            <div class="confirm-item"><span class="confirm-label">Email</span><span class="confirm-value" id="m-email"></span></div>
+            <div class="confirm-item"><span class="confirm-label">Event Date</span><span class="confirm-value">October 16, 2026</span></div>
+            <div class="confirm-item"><span class="confirm-label">Time Slot</span><span class="confirm-value highlight" id="m-time"></span></div>
+          </div>
+          
+          <div style="background: rgba(139,30,63,0.06); border-left: 4px solid var(--wine); border-radius: 8px; padding: 12px 16px; margin-top: 18px; font-size: 0.82rem; color: var(--wine); font-weight:600; line-height:1.5;">
+            <i class="bi bi-info-circle-fill me-1"></i> Admin approval is required. The slot will be reserved pending review.
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:1.5px solid var(--border-soft); padding: 20px 28px; gap: 10px;">
+          <button class="btn-reset" data-bs-dismiss="modal" style="padding: 10px 24px;">Cancel</button>
+          <button class="btn-submit" onclick="confirmBooking()" style="padding: 11px 28px; font-size: 0.95rem;">Request Pre-Schedule</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- <footer class="site-footer">
+    <div class="container-xl-custom">
+      Indo-European Wine Meet 2026 · Organised by Media India Group · <a href="index.html">Back to homepage</a>
+    </div>
+  </footer> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let selectedSlot = null;
+    let userData = {};
+    const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+    // Slots array (all possible slots)
+    const ALL_SLOTS = [
+      '09:00 AM', '09:20 AM', '09:40 AM', '10:00 AM', '10:20 AM', '10:40 AM', '11:00 AM', '11:20 AM', '11:40 AM',
+      '01:00 PM', '01:20 PM', '01:40 PM', '02:00 PM', '02:20 PM', '02:40 PM', '03:00 PM', '03:20 PM', '03:40 PM',
+      '04:00 PM', '04:20 PM', '04:40 PM'
+    ];
+
+    function getBookedSlots() {
+      const bookings = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
+      return bookings.filter(b => b.status === 'Confirmed').map(b => b.time);
+    }
+
+    function renderSlots() {
+      const booked = getBookedSlots();
+      const morningGrid = document.getElementById('morning-grid');
+      const afternoonGrid = document.getElementById('afternoon-grid');
+
+      morningGrid.innerHTML = '';
+      afternoonGrid.innerHTML = '';
+
+      ALL_SLOTS.forEach(t => {
+        const isBooked = booked.includes(t);
+        const isPm = t.includes('PM');
+        const grid = isPm ? afternoonGrid : morningGrid;
+
+        const card = document.createElement('div');
+        card.className = 'time-slot-card' + (isBooked ? ' booked' : '') + (selectedSlot === t ? ' selected' : '');
+        
+        let statusHtml = '<span class="slot-status"><span style="display:inline-block;width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-right:4px;"></span>Available</span>';
+        if (isBooked) {
+          statusHtml = '<span class="slot-status" style="background:rgba(139,30,63,0.08);color:var(--wine);"><span style="display:inline-block;width:5px;height:5px;background:var(--wine);border-radius:50%;margin-right:4px;"></span>Booked</span>';
+        } else if (selectedSlot === t) {
+          statusHtml = '<span class="slot-status" style="background:rgba(255,255,255,0.25);color:#fff;"><span style="display:inline-block;width:5px;height:5px;background:#fff;border-radius:50%;margin-right:4px;"></span>Selected</span>';
+        }
+
+        const [timePart, period] = t.split(' ');
+        const [hh, mm] = timePart.split(':').map(Number);
+        let endM = mm + 20;
+        let endH = hh;
+        let endP = period;
+        if (endM >= 60) {
+          endM -= 60;
+          endH += 1;
+          if (endH === 12) {
+            endP = period === 'AM' ? 'PM' : 'AM';
+          } else if (endH > 12) {
+            endH -= 12;
+          }
+        }
+        const endTime = `${String(endH).padStart(2, '0')}:${String(endM).padStart(2, '0')} ${endP}`;
+
+        card.innerHTML = `
+          <div class="slot-time">${t}</div>
+          <div class="slot-dur">until ${endTime}</div>
+          ${statusHtml}
+        `;
+
+        if (!isBooked) {
+          card.onclick = () => selectSlot(t, card);
+        }
+        grid.appendChild(card);
+      });
+    }
+
+    function selectSlot(t, card) {
+      selectedSlot = t;
+      document.querySelectorAll('.time-slot-card').forEach(c => c.classList.remove('selected'));
+      renderSlots();
+      document.getElementById('btn-confirm-slot').disabled = false;
+    }
+
+    function validateField(id, errId, validator) {
+      const el = document.getElementById(id);
+      const val = el.value.trim();
+      const err = document.getElementById(errId);
+      if (!validator(val)) {
+        el.classList.add('is-invalid');
+        err.style.display = 'block';
+        return false;
+      }
+      el.classList.remove('is-invalid');
+      err.style.display = 'none';
+      return true;
+    }
+
+    function submitForm() {
+      const v1 = validateField('f-name', 'err-name', v => v.length > 1);
+      const v2 = validateField('f-company', 'err-company', v => v.length > 1);
+      const v3 = validateField('f-role', 'err-role', v => v.length > 1);
+      const v4 = validateField('f-country', 'err-country', v => v !== "");
+      const v5 = validateField('f-email', 'err-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      const v6 = validateField('f-phone', 'err-phone', v => /^[\d\s+\-()]{7,}$/.test(v));
+      const v7 = validateField('f-purpose', 'err-purpose', v => v.length > 1);
+
+      if (!v1 || !v2 || !v3 || !v4 || !v5 || !v6 || !v7) return;
+
+      userData = {
+        name: document.getElementById('f-name').value.trim(),
+        company: document.getElementById('f-company').value.trim(),
+        role: document.getElementById('f-role').value.trim(),
+        country: document.getElementById('f-country').value,
+        email: document.getElementById('f-email').value.trim(),
+        phone: document.getElementById('f-phone').value.trim(),
+        purpose: document.getElementById('f-purpose').value.trim(),
+        notes: document.getElementById('f-notes').value.trim(),
+        type: document.getElementById('f-type').value
+      };
+
+      document.getElementById('step-form-block').style.display = 'none';
+      document.getElementById('step-slots-block').style.display = 'block';
+      
+      // Update Stepper
+      document.getElementById('step-node-1').classList.remove('active');
+      document.getElementById('step-node-1').classList.add('completed');
+      document.getElementById('step-node-2').classList.add('active');
+
+      renderSlots();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function backToForm() {
+      document.getElementById('step-slots-block').style.display = 'none';
+      document.getElementById('step-form-block').style.display = 'block';
+      
+      // Update Stepper
+      document.getElementById('step-node-1').classList.add('active');
+      document.getElementById('step-node-1').classList.remove('completed');
+      document.getElementById('step-node-2').classList.remove('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openConfirmModal() {
+      if (!selectedSlot) return;
+      document.getElementById('m-name').textContent = userData.name;
+      document.getElementById('m-company').textContent = userData.company;
+      document.getElementById('m-role').textContent = userData.role;
+      document.getElementById('m-email').textContent = userData.email;
+      document.getElementById('m-time').textContent = selectedSlot;
+      confirmModal.show();
+    }
+
+    function confirmBooking() {
+      confirmModal.hide();
+      const ref = 'REQ-' + String(Math.floor(1000 + Math.random() * 9000));
+      document.getElementById('ref-text').textContent = ref;
+      document.getElementById('success-email').textContent = userData.email;
+      document.getElementById('s-name').textContent = userData.name;
+      document.getElementById('s-company').textContent = userData.company;
+      document.getElementById('s-time').textContent = selectedSlot;
+
+      // Save meeting request to wm_bookings
+      const bookings = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
+      bookings.push({
+        id: ref,
+        name: userData.name,
+        company: userData.company,
+        role: userData.role,
+        country: userData.country,
+        email: userData.email,
+        phone: userData.phone,
+        purpose: userData.purpose,
+        notes: userData.notes,
+        type: userData.type,
+        date: '16 Oct 2026',
+        time: selectedSlot,
+        status: 'Pending',
+        ts: Date.now()
+      });
+      localStorage.setItem('wm_bookings', JSON.stringify(bookings));
+
+      // Also register as a user if they don't exist yet
+      const users = JSON.parse(localStorage.getItem('wm_users') || '[]');
+      const userExists = users.some(u => u.email.toLowerCase() === userData.email.toLowerCase());
+      if (!userExists) {
+        users.push({
+          email: userData.email,
+          name: userData.name,
+          company: userData.company,
+          password: 'password123'
+        });
+        localStorage.setItem('wm_users', JSON.stringify(users));
+      }
+
+      document.getElementById('step-slots-block').style.display = 'none';
+      document.getElementById('step-success-block').style.display = 'block';
+
+      // Update Stepper
+      document.getElementById('step-node-2').classList.remove('active');
+      document.getElementById('step-node-2').classList.add('completed');
+      document.getElementById('step-node-3').classList.add('active');
+      document.getElementById('step-node-3').classList.add('completed');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function restartBooking() {
+      document.getElementById('step-success-block').style.display = 'none';
+      document.getElementById('step-form-block').style.display = 'block';
+      
+      // Update Stepper
+      document.getElementById('step-node-1').classList.add('active');
+      document.getElementById('step-node-1').classList.remove('completed');
+      document.getElementById('step-node-2').classList.remove('active');
+      document.getElementById('step-node-2').classList.remove('completed');
+      document.getElementById('step-node-3').classList.remove('active');
+      document.getElementById('step-node-3').classList.remove('completed');
+
+      ['f-name', 'f-company', 'f-role', 'f-email', 'f-phone', 'f-purpose', 'f-notes'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = '';
+        el.classList.remove('is-invalid');
+      });
+      document.getElementById('f-country').value = '';
+      userData = {};
+      selectedSlot = null;
+      document.getElementById('btn-confirm-slot').disabled = true;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Input listeners to clear error state
+    ['f-name', 'f-company', 'f-role', 'f-email', 'f-phone', 'f-purpose'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        document.getElementById(id).classList.remove('is-invalid');
+        const errMap = {
+          'f-name': 'err-name', 'f-company': 'err-company', 'f-role': 'err-role',
+          'f-email': 'err-email', 'f-phone': 'err-phone', 'f-purpose': 'err-purpose'
+        };
+        document.getElementById(errMap[id]).style.display = 'none';
+      });
+    });
+    document.getElementById('f-country').addEventListener('change', () => {
+      document.getElementById('f-country').classList.remove('is-invalid');
+      document.getElementById('err-country').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

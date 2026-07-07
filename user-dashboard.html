@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participant Dashboard | Indo-European Wine Meet 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="admin-sidebar-logo">
+      <img src="https://mediaindia.eu/wp-content/themes/mig_theme/images/mig-logo.png" alt="MIG" style="filter: brightness(0) invert(1);">
+      <div class="title-wrap">
+        <h5>Wine Meet 2026</h5>
+        <p>Participant Dashboard</p>
+      </div>
+    </div>
+    
+    <nav class="admin-nav">
+      <div class="admin-nav-label">Main</div>
+      <a class="admin-nav-item active" href="user-dashboard.html">
+        <i class="bi bi-grid-fill"></i><span>Dashboard</span>
+      </a>
+      <a class="admin-nav-item" href="#">
+        <i class="bi bi-file-earmark-text"></i><span>My Requests</span>
+      </a>
+      <a class="admin-nav-item" href="#">
+        <i class="bi bi-calendar2-check"></i><span>Confirmed Meetings</span>
+      </a>
+      <a class="admin-nav-item" href="#">
+        <i class="bi bi-person-fill-gear"></i><span>Profile</span>
+      </a>
+      <a class="admin-nav-item" href="#">
+        <i class="bi bi-shield-lock"></i><span>Change Password</span>
+      </a>
+      
+      <div class="admin-nav-label">Session</div>
+      <a class="admin-nav-item text-danger" onclick="handleSignOut()">
+        <i class="bi bi-box-arrow-left"></i><span>Logout</span>
+      </a>
+    </nav>
+    
+    <div class="admin-sidebar-footer">
+      <button class="admin-collapse-btn" onclick="toggleSidebar()">
+        <i class="bi bi-chevron-left"></i><span>Collapse</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT AREA ============ -->
+  <div class="admin-main" id="main-content">
+    
+    <!-- HEADER -->
+    <header class="admin-header">
+      <div class="admin-header-title" id="header-title">
+        Dashboard
+        <span id="header-sub">Here's an overview of your meeting requests.</span>
+      </div>
+      
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <div class="admin-action-btn" onclick="toggleDark()" title="Toggle Dark/Light Mode">
+          <i class="bi bi-moon-stars-fill" id="dark-icon"></i>
+        </div>
+        
+        <!-- Welcome banner with user profile image -->
+        <div class="d-flex align-items-center gap-2" style="padding:4px 12px; border-radius:10px; background:#fff; border:1.5px solid var(--border-soft);">
+          <span style="font-size:0.85rem; font-weight:600; color:var(--ink);" id="header-welcome-name">Welcome, Rahul Mehta</span>
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&fit=crop&q=80" alt="Avatar" style="width:30px; height:30px; border-radius:50%; object-fit:cover; border:1px solid var(--wine);">
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE BODY -->
+    <div class="page-body" style="padding:28px;">
+
+      <!-- STAT CARDS -->
+      <div class="row g-4 mb-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="admin-stat-card admin-stat-1">
+            <div class="admin-stat-icon"><i class="bi bi-list-check"></i></div>
+            <div class="admin-stat-num" id="stat-total">5</div>
+            <div class="admin-stat-label">Total Requests</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="admin-stat-card admin-stat-2">
+            <div class="admin-stat-icon"><i class="bi bi-clock-history"></i></div>
+            <div class="admin-stat-num" id="stat-pending">2</div>
+            <div class="admin-stat-label">Pending</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="admin-stat-card admin-stat-3">
+            <div class="admin-stat-icon"><i class="bi bi-shield-check"></i></div>
+            <div class="admin-stat-num" id="stat-confirmed">2</div>
+            <div class="admin-stat-label">Confirmed</div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="admin-stat-card admin-stat-4">
+            <div class="admin-stat-icon"><i class="bi bi-x-circle-fill"></i></div>
+            <div class="admin-stat-num" id="stat-rejected">1</div>
+            <div class="admin-stat-label">Rejected</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MY REQUESTS GRID -->
+      <div class="admin-table-card mb-4">
+        <div class="admin-table-toolbar">
+          <span class="admin-table-title">My Meeting Requests</span>
+          <button class="btn-reset" style="padding:6px 18px; font-size:0.8rem; font-weight:700;"><i class="bi bi-eye me-1"></i>View All</button>
+        </div>
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Date</th>
+                <th>Time Slot</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="user-requests-tbody">
+              <!-- Seed data table rows -->
+              <tr>
+                <td><strong style="color:var(--wine);">REQ-0005</strong></td>
+                <td>16 Oct 2026</td>
+                <td><span style="font-weight:700; color:var(--ink);">11:30 - 12:00</span></td>
+                <td><span class="admin-status-badge admin-status-pending">Pending</span></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0005')"><i class="bi bi-eye-fill"></i></button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--wine);">REQ-0004</strong></td>
+                <td>16 Oct 2026</td>
+                <td><span style="font-weight:700; color:var(--ink);">12:15 - 12:45</span></td>
+                <td><span class="admin-status-badge admin-status-confirmed">Confirmed</span></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0004')"><i class="bi bi-eye-fill"></i></button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--wine);">REQ-0003</strong></td>
+                <td>16 Oct 2026</td>
+                <td><span style="font-weight:700; color:var(--ink);">14:00 - 14:30</span></td>
+                <td><span class="admin-status-badge admin-status-pending">Pending</span></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0003')"><i class="bi bi-eye-fill"></i></button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--wine);">REQ-0002</strong></td>
+                <td>16 Oct 2026</td>
+                <td><span style="font-weight:700; color:var(--ink);">15:30 - 16:00</span></td>
+                <td><span class="admin-status-badge admin-status-rejected">Rejected</span></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0002')"><i class="bi bi-eye-fill"></i></button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--wine);">REQ-0001</strong></td>
+                <td>16 Oct 2026</td>
+                <td><span style="font-weight:700; color:var(--ink);">16:15 - 16:45</span></td>
+                <td><span class="admin-status-badge admin-status-confirmed">Confirmed</span></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0001')"><i class="bi bi-eye-fill"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MAIN CONFIRMED MEETING HIGHLIGHT BOX -->
+      <div class="admin-table-card p-4" id="confirmed-hero-card">
+        <h5 style="font-weight:800; font-family:var(--font-serif); color:var(--wine); margin-bottom:18px;">Your Confirmed Meeting</h5>
+        
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-4" style="background:#fff7f2; border:1px solid var(--border-soft); border-left:5px solid var(--wine); border-radius:12px; padding:20px;">
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <!-- Date block box -->
+            <div class="date-block-box">
+              <span class="day">16</span>
+              <span class="month">Oct</span>
+              <span class="year">2026</span>
+            </div>
+            
+            <div class="text-start">
+              <div class="mb-2">
+                <span style="font-size:0.75rem; color:#8a7f76; font-weight:700; text-transform:uppercase;">Time</span>
+                <div style="font-size:1.15rem; font-weight:800; color:var(--wine);" id="confirmed-hero-time">12:15 - 12:45</div>
+              </div>
+              <div class="mb-2">
+                <span style="font-size:0.75rem; color:#8a7f76; font-weight:700; text-transform:uppercase;">Company</span>
+                <div style="font-size:0.95rem; font-weight:700; color:var(--ink);">Château de France</div>
+              </div>
+              <div>
+                <span class="admin-status-badge admin-status-confirmed">Confirmed</span>
+                <span style="font-size:0.82rem; color:#8a7f76; margin-left:8px; font-weight:500;">We look forward to meeting you!</span>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn-outline-wine" onclick="alert('Downloading B2B Schedule Outline...')" style="padding:10px 24px;"><i class="bi bi-download me-1"></i>Download Confirmation &nbsp;&rarr;</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ DETAIL MODAL ============ -->
+  <div class="modal fade" id="requestDetailModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius:22px; border:2px solid var(--border-soft); box-shadow:0 24px 60px rgba(139,30,63,0.22);">
+        <div class="modal-header" style="border-bottom:1.5px solid var(--border-soft); padding: 22px 28px 18px;">
+          <h5 class="modal-title" style="font-weight:800; font-family:var(--font-display); color:var(--ink);"><i class="bi bi-file-earmark-text-fill text-wine me-2"></i>Request Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" style="padding:22px 28px;">
+          <div id="modal-content-body"></div>
+        </div>
+        <div class="modal-footer" style="border-top:1.5px solid var(--border-soft); padding: 18px 28px;">
+          <button type="button" class="btn-reset" data-bs-dismiss="modal" style="padding:8px 18px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Security check - disabled for now
+    const userEmail = sessionStorage.getItem('user_logged_email') || 'j.dupont@chateaumargaux.fr';
+    const userName = sessionStorage.getItem('user_logged_name') || 'Rahul Mehta';
+
+    // Set initials & header welcome
+    document.getElementById('header-welcome-name').textContent = `Welcome, ${userName}`;
+    
+    // Load & Render User bookings
+    let userBookings = [];
+    const detailModal = new bootstrap.Modal(document.getElementById('requestDetailModal'));
+
+    // Check if bookings exist in localStorage, seed if empty
+    function initBookings() {
+      const stored = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
+      if (stored.length === 0) {
+        const demo = [
+          {id:'REQ-0005',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B Matchmaking',notes:'',date:'16 Oct 2026',time:'11:30 AM',status:'Pending',ts:Date.now()-100000},
+          {id:'REQ-0004',name:userName,company:'Château de France',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'Matchmaking',notes:'',date:'16 Oct 2026',time:'12:15 PM',status:'Confirmed',ts:Date.now()-200000},
+          {id:'REQ-0003',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B',notes:'',date:'16 Oct 2026',time:'02:00 PM',status:'Pending',ts:Date.now()-300000},
+          {id:'REQ-0002',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'Matchmaking',notes:'',date:'16 Oct 2026',time:'03:30 PM',status:'Rejected',ts:Date.now()-400000},
+          {id:'REQ-0001',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B Matchmaking',notes:'',date:'16 Oct 2026',time:'04:15 PM',status:'Confirmed',ts:Date.now()-500000}
+        ];
+        localStorage.setItem('wm_bookings', JSON.stringify(demo));
+      }
+    }
+
+    function renderUserDashboard() {
+      initBookings();
+      const allBookings = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
+      
+      // Filter only bookings belonging to this user email
+      userBookings = allBookings.filter(b => b.email.toLowerCase() === userEmail.toLowerCase());
+      
+      // Calculate Stats
+      const total = userBookings.length;
+      const pending = userBookings.filter(b => b.status === 'Pending').length;
+      const confirmed = userBookings.filter(b => b.status === 'Confirmed').length;
+      const rejected = userBookings.filter(b => b.status === 'Rejected').length;
+
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-confirmed').textContent = confirmed;
+      document.getElementById('stat-rejected').textContent = rejected;
+
+      // Handle main highlighted confirmed block
+      const confirmedHero = document.getElementById('confirmed-hero-card');
+      const confirmedMeeting = userBookings.find(b => b.status === 'Confirmed');
+      
+      if (confirmedHero) {
+        if (confirmedMeeting) {
+          confirmedHero.style.display = 'block';
+          document.getElementById('confirmed-hero-time').textContent = confirmedMeeting.time;
+        } else {
+          confirmedHero.style.display = 'none';
+        }
+      }
+
+      // Render table
+      const tbody = document.getElementById('user-requests-tbody');
+      if (total === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="5">
+              <div class="empty-state">
+                <div class="empty-icon"><i class="bi bi-calendar-plus"></i></div>
+                <p style="color:#8a7f76; font-size:0.9rem;">You haven't requested any meetings yet. <a href="Meeting_from.html" target="_blank" style="color:var(--wine); font-weight:700;">Schedule one now &rarr;</a></p>
+              </div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = userBookings.map(b => `
+        <tr>
+          <td><strong style="color:var(--wine);">${esc(b.id)}</strong></td>
+          <td>16 Oct 2026</td>
+          <td><span style="font-weight:700; color:var(--ink);">${esc(b.time)}</span></td>
+          <td><span class="admin-status-badge admin-status-${b.status.toLowerCase()}">${b.status}</span></td>
+          <td>
+            <button class="admin-action-btn" onclick="viewRequestDetails('${b.id}')"><i class="bi bi-eye-fill"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function viewRequestDetails(id) {
+      const allBookings = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
+      const b = allBookings.find(x => x.id === id);
+      if (!b) return;
+
+      let statusMsg = '';
+      if (b.status === 'Confirmed') {
+        statusMsg = `<div style="background:rgba(110,139,92,0.08); border-left:4px solid var(--leaf); padding:12px; border-radius:8px; font-size:0.82rem; font-weight:600; color:var(--leaf-dark); margin-top:16px;">
+          <i class="bi bi-check-circle-fill me-1"></i> Your slot is approved by the admin. Please download your schedule outline or keep a screenshot for admission.
+        </div>`;
+      } else if (b.status === 'Pending') {
+        statusMsg = `<div style="background:rgba(242,154,46,0.08); border-left:4px solid var(--amber); padding:12px; border-radius:8px; font-size:0.82rem; font-weight:600; color:#b06209; margin-top:16px;">
+          <i class="bi bi-hourglass-split me-1"></i> Under review by coordinator. We will notify you once approved.
+        </div>`;
+      } else {
+        statusMsg = `<div style="background:rgba(139,30,63,0.08); border-left:4px solid var(--wine); padding:12px; border-radius:8px; font-size:0.82rem; font-weight:600; color:var(--wine); margin-top:16px;">
+          <i class="bi bi-exclamation-triangle-fill me-1"></i> This time slot was declined. You can request another slot or email the team at r.nayar@mediaindia.eu.
+        </div>`;
+      }
+
+      document.getElementById('modal-content-body').innerHTML = `
+        <div style="background:var(--paper); border-radius:12px; padding:20px; border:1px solid var(--border-soft);">
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Meeting ID</span><span style="font-weight:700; color:var(--wine);">${esc(b.id)}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Participant</span><span style="font-weight:700;">${esc(b.name)}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Company</span><span>${esc(b.company)}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Designation</span><span>${esc(b.role)}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Email Address</span><span>${esc(b.email)}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-soft); font-size:0.9rem;"><span style="color:#8a7f76;">Matchmaking Date</span><span style="font-weight:600;">October 16, 2026</span></div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:0.9rem;"><span style="color:#8a7f76;">Time Slot</span><span style="font-weight:800; color:var(--wine);">${esc(b.time)}</span></div>
+        </div>
+        ${statusMsg}
+      `;
+      detailModal.show();
+    }
+
+    function handleSignOut() {
+      sessionStorage.removeItem('user_logged_email');
+      sessionStorage.removeItem('user_logged_name');
+      window.location.href = 'user-login.html';
+    }
+
+    // Sidebar collapse
+    let sidebarCollapsed = false;
+    function toggleSidebar() {
+      sidebarCollapsed = !sidebarCollapsed;
+      document.getElementById('sidebar').classList.toggle('collapsed', sidebarCollapsed);
+      document.getElementById('main-content').classList.toggle('collapsed', sidebarCollapsed);
+    }
+
+    // Dark/Light
+    function toggleDark() {
+      const curr = document.documentElement.getAttribute('data-theme');
+      const next = curr === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      document.getElementById('dark-icon').className = next === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+    }
+
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str || '';
+      return d.innerHTML;
+    }
+
+    renderUserDashboard();
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
-# EU–India Wine Summit 2026
+# 1st EU–India Wine Summit 2026
 ## B2B Matchmaking & Pre-Scheduling System
 
-An elegant, fully-featured frontend scheduling and registration system built for the **EU–India Wine Summit 2026** on the sidelines of SIAL Paris 2026. This repository connects public registrations, slot bookings, participant portals, and coordinator dashboards into a premium, cohesive workflow.
+An elegant, fully-featured frontend scheduling and registration system built for the **1st EU–India Wine Summit 2026** on the sidelines of SIAL Paris 2026. This repository connects public registrations, slot bookings, participant portals, and coordinator dashboards into a premium, cohesive workflow.
 
 ---
 

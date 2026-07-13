@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Participant Dashboard | EU–India Wine Summit 2026</title>
+  <title>Participant Dashboard | 1st EU–India Wine Summit 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="admin-layout">
 
   <!-- ============ SIDEBAR ============ -->
   <aside class="admin-sidebar" id="sidebar">
     <div class="admin-sidebar-logo">
-      <img src="https://mediaindia.eu/wp-content/themes/mig_theme/images/mig-logo.png" alt="MIG" style="filter: brightness(0) invert(1);">
+      <img src="https://mediaindia.eu/wp-content/themes/mig_theme/images/mig-logo.png" alt="MIG"
+        style="filter: brightness(0) invert(1);">
       <div class="title-wrap">
         <h5>Wine Summit 2026</h5>
         <p>Participant Dashboard</p>
       </div>
     </div>
-    
+
     <nav class="admin-nav">
       <div class="admin-nav-label">Main</div>
       <a class="admin-nav-item active" href="user-dashboard.html">
@@ -40,13 +45,13 @@
       <a class="admin-nav-item" href="#">
         <i class="bi bi-shield-lock"></i><span>Change Password</span>
       </a>
-      
+
       <div class="admin-nav-label">Session</div>
       <a class="admin-nav-item text-danger" onclick="handleSignOut()">
         <i class="bi bi-box-arrow-left"></i><span>Logout</span>
       </a>
     </nav>
-    
+
     <div class="admin-sidebar-footer">
       <button class="admin-collapse-btn" onclick="toggleSidebar()">
         <i class="bi bi-chevron-left"></i><span>Collapse</span>
@@ -56,23 +61,26 @@
 
   <!-- ============ MAIN CONTENT AREA ============ -->
   <div class="admin-main" id="main-content">
-    
+
     <!-- HEADER -->
     <header class="admin-header">
       <div class="admin-header-title" id="header-title">
         Dashboard
         <span id="header-sub">Here's an overview of your meeting requests.</span>
       </div>
-      
+
       <div class="ms-auto d-flex align-items-center gap-3">
         <div class="admin-action-btn" onclick="toggleDark()" title="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill" id="dark-icon"></i>
         </div>
-        
+
         <!-- Welcome banner with user profile image -->
-        <div class="d-flex align-items-center gap-2" style="padding:4px 12px; border-radius:10px; background:#fff; border:1.5px solid var(--border-soft);">
-          <span style="font-size:0.85rem; font-weight:600; color:var(--ink);" id="header-welcome-name">Welcome, Rahul Mehta</span>
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&fit=crop&q=80" alt="Avatar" style="width:30px; height:30px; border-radius:50%; object-fit:cover; border:1px solid var(--wine);">
+        <div class="d-flex align-items-center gap-2"
+          style="padding:4px 12px; border-radius:10px; background:#fff; border:1.5px solid var(--border-soft);">
+          <span style="font-size:0.85rem; font-weight:600; color:var(--ink);" id="header-welcome-name">Welcome, Rahul
+            Mehta</span>
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&fit=crop&q=80" alt="Avatar"
+            style="width:30px; height:30px; border-radius:50%; object-fit:cover; border:1px solid var(--wine);">
         </div>
       </div>
     </header>
@@ -116,7 +124,8 @@
       <div class="admin-table-card mb-4">
         <div class="admin-table-toolbar">
           <span class="admin-table-title">My Meeting Requests</span>
-          <button class="btn-reset" style="padding:6px 18px; font-size:0.8rem; font-weight:700;"><i class="bi bi-eye me-1"></i>View All</button>
+          <button class="btn-reset" style="padding:6px 18px; font-size:0.8rem; font-weight:700;"><i
+              class="bi bi-eye me-1"></i>View All</button>
         </div>
         <div class="table-responsive">
           <table class="admin-table">
@@ -136,35 +145,40 @@
                 <td>16 Oct 2026</td>
                 <td><span style="font-weight:700; color:var(--ink);">11:30 - 12:00</span></td>
                 <td><span class="admin-status-badge admin-status-pending">Pending</span></td>
-                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0005')"><i class="bi bi-eye-fill"></i></button></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0005')"><i
+                      class="bi bi-eye-fill"></i></button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--wine);">REQ-0004</strong></td>
                 <td>16 Oct 2026</td>
                 <td><span style="font-weight:700; color:var(--ink);">12:15 - 12:45</span></td>
                 <td><span class="admin-status-badge admin-status-confirmed">Confirmed</span></td>
-                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0004')"><i class="bi bi-eye-fill"></i></button></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0004')"><i
+                      class="bi bi-eye-fill"></i></button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--wine);">REQ-0003</strong></td>
                 <td>16 Oct 2026</td>
                 <td><span style="font-weight:700; color:var(--ink);">14:00 - 14:30</span></td>
                 <td><span class="admin-status-badge admin-status-pending">Pending</span></td>
-                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0003')"><i class="bi bi-eye-fill"></i></button></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0003')"><i
+                      class="bi bi-eye-fill"></i></button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--wine);">REQ-0002</strong></td>
                 <td>16 Oct 2026</td>
                 <td><span style="font-weight:700; color:var(--ink);">15:30 - 16:00</span></td>
                 <td><span class="admin-status-badge admin-status-rejected">Rejected</span></td>
-                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0002')"><i class="bi bi-eye-fill"></i></button></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0002')"><i
+                      class="bi bi-eye-fill"></i></button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--wine);">REQ-0001</strong></td>
                 <td>16 Oct 2026</td>
                 <td><span style="font-weight:700; color:var(--ink);">16:15 - 16:45</span></td>
                 <td><span class="admin-status-badge admin-status-confirmed">Confirmed</span></td>
-                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0001')"><i class="bi bi-eye-fill"></i></button></td>
+                <td><button class="admin-action-btn" onclick="viewRequestDetails('REQ-0001')"><i
+                      class="bi bi-eye-fill"></i></button></td>
               </tr>
             </tbody>
           </table>
@@ -173,9 +187,11 @@
 
       <!-- MAIN CONFIRMED MEETING HIGHLIGHT BOX -->
       <div class="admin-table-card p-4" id="confirmed-hero-card">
-        <h5 style="font-weight:800; font-family:var(--font-serif); color:var(--wine); margin-bottom:18px;">Your Confirmed Meeting</h5>
-        
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-4" style="background:#fff7f2; border:1px solid var(--border-soft); border-left:5px solid var(--wine); border-radius:12px; padding:20px;">
+        <h5 style="font-weight:800; font-family:var(--font-serif); color:var(--wine); margin-bottom:18px;">Your
+          Confirmed Meeting</h5>
+
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-4"
+          style="background:#fff7f2; border:1px solid var(--border-soft); border-left:5px solid var(--wine); border-radius:12px; padding:20px;">
           <div class="d-flex align-items-center gap-4 flex-wrap">
             <!-- Date block box -->
             <div class="date-block-box">
@@ -183,24 +199,28 @@
               <span class="month">Oct</span>
               <span class="year">2026</span>
             </div>
-            
+
             <div class="text-start">
               <div class="mb-2">
                 <span style="font-size:0.75rem; color:#8a7f76; font-weight:700; text-transform:uppercase;">Time</span>
-                <div style="font-size:1.15rem; font-weight:800; color:var(--wine);" id="confirmed-hero-time">12:15 - 12:45</div>
+                <div style="font-size:1.15rem; font-weight:800; color:var(--wine);" id="confirmed-hero-time">12:15 -
+                  12:45</div>
               </div>
               <div class="mb-2">
-                <span style="font-size:0.75rem; color:#8a7f76; font-weight:700; text-transform:uppercase;">Company</span>
+                <span
+                  style="font-size:0.75rem; color:#8a7f76; font-weight:700; text-transform:uppercase;">Company</span>
                 <div style="font-size:0.95rem; font-weight:700; color:var(--ink);">Château de France</div>
               </div>
               <div>
                 <span class="admin-status-badge admin-status-confirmed">Confirmed</span>
-                <span style="font-size:0.82rem; color:#8a7f76; margin-left:8px; font-weight:500;">We look forward to meeting you!</span>
+                <span style="font-size:0.82rem; color:#8a7f76; margin-left:8px; font-weight:500;">We look forward to
+                  meeting you!</span>
               </div>
             </div>
           </div>
-          
-          <button class="btn-outline-wine" onclick="alert('Downloading B2B Schedule Outline...')" style="padding:10px 24px;"><i class="bi bi-download me-1"></i>Download Confirmation &nbsp;&rarr;</button>
+
+          <button class="btn-outline-wine" onclick="alert('Downloading B2B Schedule Outline...')"
+            style="padding:10px 24px;"><i class="bi bi-download me-1"></i>Download Confirmation &nbsp;&rarr;</button>
         </div>
       </div>
 
@@ -210,9 +230,11 @@
   <!-- ============ DETAIL MODAL ============ -->
   <div class="modal fade" id="requestDetailModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content" style="border-radius:22px; border:2px solid var(--border-soft); box-shadow:0 24px 60px rgba(139,30,63,0.22);">
+      <div class="modal-content"
+        style="border-radius:22px; border:2px solid var(--border-soft); box-shadow:0 24px 60px rgba(139,30,63,0.22);">
         <div class="modal-header" style="border-bottom:1.5px solid var(--border-soft); padding: 22px 28px 18px;">
-          <h5 class="modal-title" style="font-weight:800; font-family:var(--font-display); color:var(--ink);"><i class="bi bi-file-earmark-text-fill text-wine me-2"></i>Request Details</h5>
+          <h5 class="modal-title" style="font-weight:800; font-family:var(--font-display); color:var(--ink);"><i
+              class="bi bi-file-earmark-text-fill text-wine me-2"></i>Request Details</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body" style="padding:22px 28px;">
@@ -233,7 +255,7 @@
 
     // Set initials & header welcome
     document.getElementById('header-welcome-name').textContent = `Welcome, ${userName}`;
-    
+
     // Load & Render User bookings
     let userBookings = [];
     const detailModal = new bootstrap.Modal(document.getElementById('requestDetailModal'));
@@ -243,11 +265,11 @@
       const stored = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
       if (stored.length === 0) {
         const demo = [
-          {id:'REQ-0005',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B Matchmaking',notes:'',date:'16 Oct 2026',time:'11:30 AM',status:'Pending',ts:Date.now()-100000},
-          {id:'REQ-0004',name:userName,company:'Château de France',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'Matchmaking',notes:'',date:'16 Oct 2026',time:'12:15 PM',status:'Confirmed',ts:Date.now()-200000},
-          {id:'REQ-0003',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B',notes:'',date:'16 Oct 2026',time:'02:00 PM',status:'Pending',ts:Date.now()-300000},
-          {id:'REQ-0002',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'Matchmaking',notes:'',date:'16 Oct 2026',time:'03:30 PM',status:'Rejected',ts:Date.now()-400000},
-          {id:'REQ-0001',name:userName,company:'Mehta Wines',role:'MD',country:'India',email:userEmail,phone:'+91 98765 43210',purpose:'B2B Matchmaking',notes:'',date:'16 Oct 2026',time:'04:15 PM',status:'Confirmed',ts:Date.now()-500000}
+          { id: 'REQ-0005', name: userName, company: 'Mehta Wines', role: 'MD', country: 'India', email: userEmail, phone: '+91 98765 43210', purpose: 'B2B Matchmaking', notes: '', date: '16 Oct 2026', time: '11:30 AM', status: 'Pending', ts: Date.now() - 100000 },
+          { id: 'REQ-0004', name: userName, company: 'Château de France', role: 'MD', country: 'India', email: userEmail, phone: '+91 98765 43210', purpose: 'Matchmaking', notes: '', date: '16 Oct 2026', time: '12:15 PM', status: 'Confirmed', ts: Date.now() - 200000 },
+          { id: 'REQ-0003', name: userName, company: 'Mehta Wines', role: 'MD', country: 'India', email: userEmail, phone: '+91 98765 43210', purpose: 'B2B', notes: '', date: '16 Oct 2026', time: '02:00 PM', status: 'Pending', ts: Date.now() - 300000 },
+          { id: 'REQ-0002', name: userName, company: 'Mehta Wines', role: 'MD', country: 'India', email: userEmail, phone: '+91 98765 43210', purpose: 'Matchmaking', notes: '', date: '16 Oct 2026', time: '03:30 PM', status: 'Rejected', ts: Date.now() - 400000 },
+          { id: 'REQ-0001', name: userName, company: 'Mehta Wines', role: 'MD', country: 'India', email: userEmail, phone: '+91 98765 43210', purpose: 'B2B Matchmaking', notes: '', date: '16 Oct 2026', time: '04:15 PM', status: 'Confirmed', ts: Date.now() - 500000 }
         ];
         localStorage.setItem('wm_bookings', JSON.stringify(demo));
       }
@@ -256,10 +278,10 @@
     function renderUserDashboard() {
       initBookings();
       const allBookings = JSON.parse(localStorage.getItem('wm_bookings') || '[]');
-      
+
       // Filter only bookings belonging to this user email
       userBookings = allBookings.filter(b => b.email.toLowerCase() === userEmail.toLowerCase());
-      
+
       // Calculate Stats
       const total = userBookings.length;
       const pending = userBookings.filter(b => b.status === 'Pending').length;
@@ -274,7 +296,7 @@
       // Handle main highlighted confirmed block
       const confirmedHero = document.getElementById('confirmed-hero-card');
       const confirmedMeeting = userBookings.find(b => b.status === 'Confirmed');
-      
+
       if (confirmedHero) {
         if (confirmedMeeting) {
           confirmedHero.style.display = 'block';
@@ -379,4 +401,5 @@
     renderUserDashboard();
   </script>
 </body>
+
 </html>

@@ -1,17 +1,17 @@
 /* ============ TOKENS ============ */
 :root {
-  --cream: #F5EEE6;
-  --cream-alt: #F3EADF;
-  --paper: #FBF7F1;
-  --wine: #8B1E3F;
-  --wine-deep: #6E1731;
-  --rose: #A32045;
-  --terracotta: #B5502F;
-  --ink: #1D1714;
-  --border-soft: #D9CDC2;
-  --amber: #F29A2E;
-  --leaf: #6E8B5C;
-  --leaf-dark: #4F6B41;
+  --cream: #FAF6F0; /* Soft ivory background */
+  --cream-alt: #F3EAE1; /* Richer warm cream background */
+  --paper: #FDFCF9; /* Cleaner paper ivory background */
+  --wine: #722F37; /* Official Port Wine Red */
+  --wine-deep: #4A0E17; /* Deep Burgundy */
+  --rose: #8C2D38; /* Soft Porto Rose */
+  --terracotta: #802A36; /* Rich dark wine color instead of orange terracotta */
+  --ink: #221A18; /* Elegant deep wine-ink */
+  --border-soft: #E2D7CD; /* Premium soft beige border */
+  --amber: #C5A059; /* Wine Gold instead of bright orange */
+  --leaf: #5B724C; /* Elegant muted olive/grape leaf green */
+  --leaf-dark: #3F5234; /* Rich dark muted olive */
 
   --font-display: 'Poppins', sans-serif;
   --font-serif: 'Playfair Display', serif;
@@ -85,7 +85,7 @@ h4 {
 }
 
 .section-title {
-  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin-bottom: 18px;
 }
 
@@ -383,6 +383,7 @@ section {
   margin-bottom: 6px;
   font-family: var(--font-display);
   font-weight: 800;
+  color: #722F37;
 }
 
 .hero-subline {
@@ -2737,7 +2738,172 @@ textarea.form-control{ min-height: 100px; resize: vertical; }
   box-shadow: 0 8px 20px rgba(139, 30, 63, 0.25);
   z-index: 10;
 }
+/* ============ EU-INDIA WINE SUMMIT CUSTOM STYLES ============ */
+.market-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+@media (max-width: 991px) {
+  .market-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.market-card {
+  background: var(--paper);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 34px;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(29, 23, 20, 0.04);
+}
+.market-card h4 {
+  font-family: var(--font-serif);
+  color: var(--wine);
+  font-size: 1.45rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--amber);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.market-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.market-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.market-list li::before {
+  content: "•";
+  color: var(--amber);
+  font-weight: bold;
+  font-size: 1.25rem;
+  position: absolute;
+  left: 4px;
+  top: -2px;
+}
+.collab-box {
+  background: linear-gradient(135deg, var(--wine-deep) 0%, var(--wine) 100%);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 34px;
+  margin-top: 32px;
+  box-shadow: 0 15px 35px rgba(74, 14, 23, 0.15);
+}
+.collab-box h4 {
+  font-family: var(--font-serif);
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.collab-box p {
+  margin-bottom: 0;
+  line-height: 1.7;
+}
 
+/* Why Exhibit Section styles */
+.why-exhibit-section {
+  background: var(--cream);
+  padding: 100px 0;
+}
+.why-exhibit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.exhibit-card {
+  background: var(--paper);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.exhibit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(29, 23, 20, 0.08);
+}
+.exhibit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(114, 47, 55, 0.08);
+  color: var(--wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+.exhibit-card h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.exhibit-card p {
+  font-size: 0.9rem;
+  color: #4a4038;
+  line-height: 1.5;
+  margin: 0;
+}
 
-
-
+/* Simplified Registration elements styles */
+.fee-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.fee-card {
+  background: var(--cream-alt);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.25s ease;
+}
+.fee-card:hover {
+  border-color: var(--amber);
+}
+.fee-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #72665c;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.fee-price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--wine);
+}
+.deadline-box-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(114, 47, 55, 0.05);
+  border: 1.5px dashed var(--wine);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  height: 100%;
+}
+.deadline-box-inline i {
+  font-size: 1.8rem;
+  color: var(--wine);
+}
+.deadline-box-inline div {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #4a4038;
+}

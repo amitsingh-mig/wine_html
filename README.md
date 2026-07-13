@@ -1,7 +1,7 @@
-# Indo-European Wine Meet 2026
+# EU–India Wine Summit 2026
 ## B2B Matchmaking & Pre-Scheduling System
 
-An elegant, fully-featured frontend scheduling and registration system built for the **Indo-European Wine Meet 2026** at SIAL Paris. This repository connects public registrations, slot bookings, participant portals, and coordinator dashboards into a premium, cohesive workflow.
+An elegant, fully-featured frontend scheduling and registration system built for the **EU–India Wine Summit 2026** on the sidelines of SIAL Paris 2026. This repository connects public registrations, slot bookings, participant portals, and coordinator dashboards into a premium, cohesive workflow.
 
 ---
 
@@ -50,5 +50,5 @@ For quick developer preview and testing, security gates are bypassed, and defaul
 ## 🎨 Design Tokens (Shared style.css)
 *   **Cream/Paper background**: `#F5EEE6` / `#FBF7F1`
 *   **Burgundy / Wine Accent**: `#8B1E3F`
-*   **Golden Amber Accent**: `#F29A2E`
+*   **Wine Gold Accent**: `#C5A059`
 *   **Typography**: Playfair Display (Serif headings) & Poppins/Inter (Body text)

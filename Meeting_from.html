@@ -73,7 +73,6 @@
     </div>
   </header>
 
-  <div class="divider-strip"></div>
 
   <!-- ============ BOOKING WORKFLOW ============ -->
   <section class="booking-section" style="padding: 70px 0 80px;">
@@ -186,8 +185,7 @@
                   B2B Meeting</strong>
                 <p style="margin:0; font-size:0.92rem; line-height:1.6; color:#4a4038;">
                   <strong>Important:</strong> Pre-scheduled B2B Meetingss will be confirmed only after successful
-                  registration and payment (where applicable). Buyers participating under the complimentary category are
-                  exempt from the participation fee.
+                  registration and payment.
                 </p>
               </div>
             </div>
@@ -223,16 +221,16 @@
 
           <div class="form-group-block mb-4">
             <div class="group-heading" style="margin-bottom:12px;">
-              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-sunrise-fill me-2"
-                  style="color:var(--amber);"></i>Morning Session</h5>
+              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-people-fill me-2"
+                  style="color:var(--wine);"></i>B2B Meetings - Session I (14:30 – 17:30)</h5>
             </div>
             <div class="slots-wrapper" id="morning-grid"></div>
           </div>
 
           <div class="form-group-block">
             <div class="group-heading" style="margin-bottom:12px;">
-              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-sunset-fill me-2"
-                  style="color:var(--rose);"></i>Afternoon Session</h5>
+              <h5 style="font-weight:700; font-size:1.05rem; color:var(--ink);"><i class="bi bi-briefcase-fill me-2"
+                  style="color:var(--wine);"></i>B2B Meetings - Session II (18:00 – 20:00)</h5>
             </div>
             <div class="slots-wrapper" id="afternoon-grid"></div>
           </div>
@@ -420,11 +418,10 @@
     let userData = {};
     const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
 
-    // Slots array (all possible slots)
+    // Slots array (all possible slots for Session I and Session II)
     const ALL_SLOTS = [
-      '09:00 AM', '09:20 AM', '09:40 AM', '10:00 AM', '10:20 AM', '10:40 AM', '11:00 AM', '11:20 AM', '11:40 AM',
-      '01:00 PM', '01:20 PM', '01:40 PM', '02:00 PM', '02:20 PM', '02:40 PM', '03:00 PM', '03:20 PM', '03:40 PM',
-      '04:00 PM', '04:20 PM', '04:40 PM'
+      '02:30 PM', '02:50 PM', '03:10 PM', '03:30 PM', '03:50 PM', '04:10 PM', '04:30 PM', '04:50 PM', '05:10 PM',
+      '06:00 PM', '06:20 PM', '06:40 PM', '07:00 PM', '07:20 PM', '07:40 PM'
     ];
 
     function getBookedSlots() {
@@ -442,8 +439,9 @@
 
       ALL_SLOTS.forEach(t => {
         const isBooked = booked.includes(t);
-        const isPm = t.includes('PM');
-        const grid = isPm ? afternoonGrid : morningGrid;
+        // Session I: 02:30 PM to 05:10 PM, Session II: 06:00 PM to 07:40 PM
+        const isSession2 = t.startsWith('06') || t.startsWith('07');
+        const grid = isSession2 ? afternoonGrid : morningGrid;
 
         const card = document.createElement('div');
         card.className = 'time-slot-card' + (isBooked ? ' booked' : '') + (selectedSlot === t ? ' selected' : '');

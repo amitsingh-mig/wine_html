@@ -1,4 +1,3 @@
-/* ============ TOKENS ============ */
 :root {
   --cream: #FAF6F0;
   --cream-alt: #F3EAE1;
@@ -285,141 +284,24 @@ section {
   color: var(--wine);
 }
 
-/* ============ HERO BANNER ============ */
+/* ============ HERO ============ */
 .hero {
+  background: #fff;
+  padding: 56px 0 0 0;
   position: relative;
-  background: url('https://mediaindia.eu/wp-content/uploads/2026/08/Wine-Footer-Image.jpg-1-scaled.jpeg') no-repeat center center / cover;
-  color: #fff;
-  padding: 90px 0 110px 0;
-  min-height: 560px;
-  display: flex;
-  align-items: center;
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, rgba(12, 8, 8, 0.90) 0%, rgba(12, 8, 8, 0.78) 28%, rgba(12, 8, 8, 0.25) 43%, rgba(12, 8, 8, 0.05) 60%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero .container-xl-custom {
+.hero-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px) 60px;
   position: relative;
   z-index: 2;
-  width: 100%;
-}
-
-.hero-inner {
-  max-width: 600px;
-}
-
-.hero-banner-title {
-  font-family: var(--font-body), 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2rem, 3.8vw, 3.1rem);
-  line-height: 1.15;
-  color: #fff;
-  margin-bottom: 18px;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-cursive-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-weight: 700;
-  color: var(--amber, #f29a2e);
-  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-  line-height: 1.1;
-  margin: 0 0 8px 0;
-}
-
-.hero-badges-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.hero-pill-badge {
-  background: var(--amber, #f29a2e);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.88rem;
-  padding: 8px 22px;
-  border-radius: 999px;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 14px rgba(242, 154, 46, 0.35);
-}
-
-.hero-banner-desc {
-  font-size: 1.02rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 18px;
-  font-weight: 400;
-}
-
-.hero-banner-subline {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--amber, #f29a2e);
-  margin-bottom: 28px;
-}
-
-.hero-banner-ctas {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn-hero-wine {
-  background: var(--wine, #8f133d);
-  color: #fff !important;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  display: inline-block;
-}
-
-.btn-hero-wine:hover {
-  background: #730e30;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(143, 19, 61, 0.4);
-}
-
-.btn-hero-white {
-  background: #fff;
-  color: var(--wine, #8f133d) !important;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  display: inline-block;
-}
-
-.btn-hero-white:hover {
-  background: #f3eae1;
-  color: var(--wine, #8f133d) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
 .hero-image-stack {
@@ -674,10 +556,9 @@ section {
   padding: 0 2px;
 }
 
-.opp-deco-glass,
 .opp-deco-cask {
   position: absolute;
-  opacity: .18;
+  opacity: 0.18;
   width: 220px;
   right: 6%;
   bottom: 6%;
@@ -685,10 +566,9 @@ section {
   z-index: 1;
 }
 
-.opp-deco-leaf,
 .opp-deco-bottles {
   position: absolute;
-  opacity: .25;
+  opacity: 0.25;
   width: 200px;
   left: 4%;
   top: 6%;
@@ -743,6 +623,7 @@ section {
   margin: 0;
 }
 
+/* ============ PARTICIPANTS ============ */
 /* ============ PARTICIPANTS ============ */
 .participants-section {
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-alt) 100%);
@@ -808,7 +689,6 @@ section {
   line-height: 1.55;
   margin: 0;
 }
-
 /* ============ PROGRAMME TIMELINE ============ */
 .programme-section {
   background: var(--paper);
@@ -1047,7 +927,7 @@ section {
 /* ============ CONTACT / FINAL CTA ============ */
 .contact-section {
   position: relative;
-  background: url('https://mediaindia.eu/wp-content/uploads/2026/08/Wine_footer.jpg') no-repeat center right / cover;
+  background: url('https://mediaindia.eu/wp-content/uploads/2026/08/Wine-Footer-Image.jpg-1-scaled.jpeg') no-repeat center right / cover;
   color: #fff;
   padding: 100px 0;
   overflow: hidden;
@@ -1060,7 +940,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #0f0a0aeb 0%, #0f0a0aeb 33%, #0f0a0a40 75%, #0f0a0a0d 100%);
+  background: linear-gradient(90deg, rgba(15, 10, 10, 0.92) 0%, rgba(15, 10, 10, 0.82) 42%, rgba(15, 10, 10, 0.25) 75%, rgba(15, 10, 10, 0.05) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1071,6 +951,16 @@ section {
   text-align: left;
   position: relative;
   z-index: 2;
+}
+
+.contact-inner .eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--amber);
+  margin-bottom: 8px;
 }
 
 .contact-inner h2 {
@@ -1084,6 +974,7 @@ section {
 }
 
 .contact-inner p.lede {
+  font-family: var(--font-body);
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.98rem;
   line-height: 1.6;
@@ -1099,6 +990,7 @@ section {
 }
 
 .btn-cream {
+  font-family: var(--font-body);
   background: #ffffff;
   color: var(--ink) !important;
   padding: 11px 28px;
@@ -1116,6 +1008,7 @@ section {
 }
 
 .btn-ghost-cream {
+  font-family: var(--font-body);
   background: var(--wine);
   border: none;
   color: #fff !important;
@@ -1171,6 +1064,7 @@ section {
 }
 
 .contact-detail-card .role {
+  font-family: var(--font-body);
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.85rem;
   line-height: 1.4;
@@ -1178,6 +1072,8 @@ section {
 }
 
 .contact-detail-card a {
+  font-family: var(--font-body);
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 0.88rem;
@@ -1190,16 +1086,102 @@ section {
   text-decoration: underline;
 }
 
-@media (max-width: 991px) {
+/* Old style for screens below 1080px (mobile & small tablet) */
+@media (max-width: 1079.98px) {
   .contact-section {
-    background-position: center center;
-    padding: 80px 0;
+    background: linear-gradient(135deg, var(--wine) 0%, var(--wine-deep) 100%);
+    padding: 90px 0;
   }
+
   .contact-section::before {
-    background: linear-gradient(180deg, rgba(15, 10, 10, 0.9) 0%, rgba(15, 10, 10, 0.82) 100%);
+    display: none;
   }
+
   .contact-inner {
-    max-width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-inner .eyebrow {
+    color: var(--amber);
+  }
+
+  .contact-inner h2 {
+    color: #fff;
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  }
+
+  .contact-inner p.lede {
+    color: #f2e3e8;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .contact-ctas {
+    justify-content: center;
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .btn-cream {
+    background: var(--cream);
+    color: var(--wine) !important;
+    padding: 13px 30px;
+    font-weight: 700;
+  }
+
+  .btn-cream:hover {
+    background: #fff;
+  }
+
+  .btn-ghost-cream {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    color: #fff !important;
+    padding: 12.5px 30px;
+    font-weight: 700;
+  }
+
+  .btn-ghost-cream:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .contact-details-grid {
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .contact-detail-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 30px;
+    flex: 1 1 340px;
+    max-width: 380px;
+    text-align: left;
+  }
+
+  .contact-detail-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-detail-card .name {
+    font-size: 1.05rem;
+  }
+
+  .contact-detail-card .role {
+    color: #e9c9d3;
+    font-size: 0.9rem;
+  }
+
+  .contact-detail-card a {
+    color: #fff;
+    font-size: 0.94rem;
   }
 }
 
@@ -1280,19 +1262,6 @@ section {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 991px) {
-
-  .hero {
-    padding: 60px 0 70px 0;
-    min-height: 480px;
-  }
-
-  .hero::before {
-    background: linear-gradient(180deg, rgba(12, 8, 8, 0.88) 0%, rgba(12, 8, 8, 0.76) 100%);
-  }
-
-  .hero-inner {
-    max-width: 100%;
-  }
 
   .hero-grid,
   .about-grid,
@@ -1395,55 +1364,6 @@ section {
 }
 
 @media (max-width: 575px) {
-  .hero {
-    padding: 44px 0 54px 0;
-    min-height: auto;
-  }
-
-  .hero-banner-title {
-    font-size: 1.8rem;
-    margin-bottom: 14px;
-  }
-
-  .hero-cursive-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-badges-row {
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-
-  .hero-pill-badge {
-    font-size: 0.78rem;
-    padding: 5px 14px;
-  }
-
-  .hero-banner-desc {
-    font-size: 0.94rem;
-    line-height: 1.55;
-    margin-bottom: 14px;
-  }
-
-  .hero-banner-subline {
-    font-size: 1.15rem;
-    margin-bottom: 22px;
-  }
-
-  .hero-banner-ctas {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .btn-hero-wine,
-  .btn-hero-white {
-    width: 100%;
-    text-align: center;
-    padding: 11px 20px;
-  }
-
   .navbar-inner {
     padding: 10px 20px;
   }
@@ -2114,6 +2034,26 @@ textarea.form-control {
   display: flex;
 }
 
+.site-footer {
+  background: var(--ink);
+  color: #d9cdc2;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.88rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-footer a {
+  color: #d9cdc2;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 
 /* SVG Background Floaters */
 .register-deco-svg {
@@ -3482,7 +3422,7 @@ textarea.form-control {
 }
 
 .market-list li::before {
-  content: "•";
+  content: "â€¢";
   color: var(--amber);
   font-weight: bold;
   font-size: 1.25rem;
@@ -3897,4 +3837,35 @@ textarea.form-control {
   .event-popup-title {
     font-size: 1.4rem;
   }
+}
+
+/* ============ PARTICIPANT CARDS ICONS ============ */
+.participant-card .p-icon {
+  width: auto;
+  height: 85px;
+  margin: 0 auto 18px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.participant-card:hover .p-icon {
+  transform: scale(1.08);
+  background: transparent;
+}
+
+.participant-card .p-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.participant-card .p-icon img.p-icon-lg {
+  width: 85px;
+  height: 85px;
 }
